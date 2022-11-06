@@ -23,8 +23,8 @@ def newsletter_signup(request):
             from_email=settings.EMAIL_HOST_USER
             to_email=[instance.email]
 
-            html_template = 'newsletters/email_templates/welcome.html'
-            html_message = render_to_string(html_template)
+            html_template='newsletters/email_templates/welcome.html'
+            html_message=render_to_string(html_template)
             message=EmailMessage(subject,html_message,from_email,to_email)
             message.content_subtype = 'html'
             message.send()
